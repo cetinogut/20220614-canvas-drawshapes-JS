@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>HTML5 Canvas Samples</title>
+</head>
+
+<body>
+  <canvas id="canvasTest" width="500" height="400" style="border:1px solid #b85050;">
+  </canvas>
+  <script>
+    var canvasTest = document.getElementById("canvasTest");
+
+    /*Red Rectangle */
+    var ctx = canvasTest.getContext("2d");
+    ctx.fillStyle = "#FF0000";
+    ctx.fillRect(20, 20, 100, 50);
+
+    /* Gradient Rectangle 1 */
+    var grd = ctx.createLinearGradient(140, 20, 240, 70);
+    grd.addColorStop(0, "black");
+    grd.addColorStop(1, "white");
+    ctx.fillStyle = grd;
+    ctx.fillRect(140, 20, 100, 50);
+
+    /* Gradient Rectangle 2 */
+    var grd2 = ctx.createLinearGradient(20, 90, 120, 90);
+    grd2.addColorStop(0, "black");
+    grd2.addColorStop("0.3", "magenta");
+    grd2.addColorStop("0.5", "blue");
+    grd2.addColorStop("0.6", "green");
+    grd2.addColorStop("0.8", "yellow");
+    grd2.addColorStop(1, "red");
+    ctx.fillStyle = grd2;
+    ctx.fillRect(20, 90, 100, 50);
+
+    /* Text in Color */
+    ctx.font = "30px Verdana";
+    var grd3 = ctx.createLinearGradient(140, 20, 240, 90);
+    grd3.addColorStop(0, "black");
+    grd3.addColorStop("0.3", "magenta");
+    grd3.addColorStop("0.6", "blue");
+    grd3.addColorStop("0.8", "green");
+    grd3.addColorStop(1, "red");
+    ctx.strokeStyle = grd3;
+    ctx.strokeText("Canvas!", 135, 125);
+
+    /* Circle */
+
+    var c = document.getElementById("canvasTest");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(40, 200, 50, 0, 2 * Math.PI);
+    ctx.stroke();
+
+
+    /* Dastugo Technology */
+    ctx.font = "15px arial";
+    ctx.fillStyle = "black";
+    ctx.fillText("Dastugo Technology", canvasTest.height / 2, canvasTest.width / 2 + 20);
+  </script>
+</body>
+
+</html>
